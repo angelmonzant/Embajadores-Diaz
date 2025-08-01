@@ -1,52 +1,207 @@
-# Embajadores Rapikom
+# Rapikom Embajador Landing Page
 
-Este proyecto es un landing page para embajadores de Rapikom, diseñado para captar aliados comerciales y ofrecer información sobre los beneficios de afiliarse a Rapikom.
+Un landing page moderno y responsivo para representantes de Rapikom embajadores de tiendas, inspirado en [Affirm](https://www.affirm.com/) y [Cashea](https://www.cashea.app/comercios) con animaciones sorprendentes y scrolls fluidos.
 
-## Tecnologías Utilizadas
-- Next.js
-- TypeScript
-- Tailwind CSS
-- Supabase
-- Material-UI
+## 🚀 Características
 
-## Instalación
+- **Diseño Moderno**: Inspirado en las mejores prácticas de fintech
+- **Animaciones Fluidas**: Usando Framer Motion para transiciones suaves
+- **Responsivo**: Optimizado para todos los dispositivos
+- **SEO Optimizado**: Meta tags completos para mejor posicionamiento
+- **Formulario Integrado**: Conectado a Supabase para captura de leads
+- **Componentes Modulares**: Arquitectura limpia y mantenible
 
-1. Clona el repositorio:
-   ```bash
-   git clone https://github.com/angelmonzant/Embajadores-Diaz.git
-   ```
+## 🛠️ Tecnologías
 
-2. Instala las dependencias:
-   ```bash
-   npm install
-   ```
+- **Next.js 14** - Framework de React
+- **TypeScript** - Tipado estático
+- **Tailwind CSS** - Framework de estilos
+- **Framer Motion** - Animaciones
+- **Material-UI** - Componentes de formulario
+- **Supabase** - Base de datos y autenticación
+- **Lucide React** - Iconos modernos
 
-3. Configura las variables de entorno en un archivo `.env.local`:
-   ```env
-   NEXT_PUBLIC_SUPABASE_URL=tu_url_de_supabase
-   NEXT_PUBLIC_SUPABASE_ANON_KEY=tu_clave_anonima_de_supabase
-   ```
+## 📦 Instalación
 
-4. Inicia el servidor de desarrollo:
-   ```bash
-   npm run dev
-   ```
+1. **Clona el repositorio**
+```bash
+git clone https://github.com/tu-usuario/rapikom-embajador.git
+cd rapikom-embajador
+```
 
-## Estructura del Proyecto
-- `pages/index.tsx`: Página principal del landing page.
-- `components/SignupForm.tsx`: Componente de formulario de registro.
-- `lib/supabase.ts`: Configuración del cliente de Supabase.
-- `tailwind.config.js`: Configuración de Tailwind CSS.
-- `styles/globals.css`: Estilos globales.
+2. **Instala las dependencias**
+```bash
+npm install
+# o
+yarn install
+```
 
-## Despliegue
+3. **Configura las variables de entorno**
+```bash
+cp .env.local.example .env.local
+```
 
-Para desplegar el proyecto, utiliza plataformas como Vercel o Netlify. Asegúrate de configurar las variables de entorno en el panel de configuración de la plataforma.
+Edita `.env.local` con tus credenciales de Supabase:
+```env
+NEXT_PUBLIC_SUPABASE_URL=tu_url_de_supabase
+NEXT_PUBLIC_SUPABASE_ANON_KEY=tu_clave_anonima_de_supabase
+```
 
-## Contribución
+4. **Ejecuta el servidor de desarrollo**
+```bash
+npm run dev
+# o
+yarn dev
+```
 
-Si deseas contribuir, por favor abre un issue o envía un pull request con tus cambios.
+Abre [http://localhost:3000](http://localhost:3000) en tu navegador.
 
-## Licencia
+## 🗄️ Configuración de Supabase
 
-Este proyecto está bajo la licencia MIT.
+1. **Crea una tabla en Supabase** llamada `aliados_comerciales`:
+
+```sql
+CREATE TABLE aliados_comerciales (
+  id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
+  registro_mercantil TEXT NOT NULL,
+  centro_comercial TEXT NOT NULL,
+  productos TEXT NOT NULL,
+  instagram TEXT NOT NULL,
+  created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
+);
+```
+
+2. **Configura las políticas de seguridad** para permitir inserciones:
+
+```sql
+-- Permitir inserciones públicas
+CREATE POLICY "Allow public inserts" ON aliados_comerciales
+FOR INSERT WITH CHECK (true);
+```
+
+## 🎨 Personalización
+
+### Colores
+Los colores principales están definidos en `tailwind.config.js`:
+- **Primary**: `#Fa4515` (Naranja Rapikom)
+- **Secondary**: `#4E5864` (Gris corporativo)
+- **White**: `#FFFFFF`
+
+### Animaciones
+Las animaciones personalizadas están en `tailwind.config.js`:
+- `fade-in`: Aparecer gradualmente
+- `slide-up`: Deslizar hacia arriba
+- `slide-down`: Deslizar hacia abajo
+- `scale-in`: Escalar desde el centro
+- `float`: Efecto flotante
+
+## 📁 Estructura del Proyecto
+
+```
+├── components/           # Componentes React
+│   ├── AnimatedSection.tsx
+│   ├── BenefitsSection.tsx
+│   ├── FAQSection.tsx
+│   ├── HeroSection.tsx
+│   ├── PlansSection.tsx
+│   ├── RegistrationSection.tsx
+│   └── SignupForm.tsx
+├── lib/                 # Utilidades y configuración
+│   └── supabase.ts
+├── pages/               # Páginas de Next.js
+│   ├── _app.tsx
+│   └── index.tsx
+├── styles/              # Estilos globales
+│   └── globals.css
+├── tailwind.config.js   # Configuración de Tailwind
+├── package.json         # Dependencias
+└── README.md           # Este archivo
+```
+
+## 🚀 Despliegue
+
+### Vercel (Recomendado)
+1. Conecta tu repositorio a Vercel
+2. Configura las variables de entorno en el dashboard
+3. ¡Listo! Se desplegará automáticamente
+
+### Netlify
+1. Conecta tu repositorio a Netlify
+2. Configura las variables de entorno
+3. Build command: `npm run build`
+4. Publish directory: `.next`
+
+## 📱 Características del Landing
+
+### Secciones Principales
+
+1. **Hero Section**: 
+   - Título impactante con gradientes
+   - Estadísticas animadas
+   - CTAs principales
+
+2. **Benefits Section**:
+   - 6 beneficios principales
+   - Iconos animados
+   - Efectos hover
+
+3. **Plans Section**:
+   - Planes 2 y 3 cuotas
+   - Comparación de comisiones
+   - Información importante
+
+4. **FAQ Section**:
+   - Acordeón interactivo
+   - 6 preguntas frecuentes
+   - Animaciones suaves
+
+5. **Registration Section**:
+   - Formulario de registro
+   - Integración con Supabase
+   - Validación en tiempo real
+
+### Animaciones Incluidas
+
+- **Scroll Animations**: Elementos aparecen al hacer scroll
+- **Hover Effects**: Efectos al pasar el mouse
+- **Gradient Animations**: Gradientes animados
+- **Floating Elements**: Elementos flotantes
+- **Staggered Animations**: Animaciones escalonadas
+
+## 🔧 Scripts Disponibles
+
+```bash
+npm run dev      # Servidor de desarrollo
+npm run build    # Build de producción
+npm run start    # Servidor de producción
+npm run lint     # Linting del código
+```
+
+## 📈 SEO y Performance
+
+- **Meta tags completos** para redes sociales
+- **Open Graph** para Facebook
+- **Twitter Cards** para Twitter
+- **Preconnect** para fuentes externas
+- **Optimización de imágenes** automática
+- **Lazy loading** de componentes
+
+## 🤝 Contribución
+
+1. Fork el proyecto
+2. Crea una rama para tu feature (`git checkout -b feature/AmazingFeature`)
+3. Commit tus cambios (`git commit -m 'Add some AmazingFeature'`)
+4. Push a la rama (`git push origin feature/AmazingFeature`)
+5. Abre un Pull Request
+
+## 📄 Licencia
+
+Este proyecto está bajo la Licencia MIT. Ver `LICENSE` para más detalles.
+
+## 🆘 Soporte
+
+Si tienes alguna pregunta o necesitas ayuda, no dudes en abrir un issue en el repositorio.
+
+---
+
+**Desarrollado con ❤️ para Rapikom** 

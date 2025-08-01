@@ -1,59 +1,70 @@
-import Head from 'next/head';
-import SignupForm from '../components/SignupForm';
+import Head from 'next/head'
+import Header from '@/components/Header'
+import HeroSection from '@/components/HeroSection'
+import BenefitsSection from '@/components/BenefitsSection'
+import PlansSection from '@/components/PlansSection'
+import FAQSection from '@/components/FAQSection'
+import AsesoresSection from '@/components/AsesoresSection'
+import ContactSection from '@/components/ContactSection'
 
-const Home = () => {
+export default function Home() {
   return (
-    <div>
+    <>
       <Head>
-        <title>Embajador Rapikom</title>
-        <meta name="description" content="Aumenta tus ventas afiliándote a Rapikom." />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Rapikom Embajador - Aumenta tus ventas hasta 60% con financiamiento RCash</title>
+        <meta name="description" content="Únete a más de 900 aliados comerciales que ya están transformando sus negocios con Rapikom. Ofrece financiamiento a tus clientes y crece sin límites." />
+        <meta name="keywords" content="Rapikom, RCash, financiamiento, cuotas, comercio, ventas, aliado comercial, Venezuela" />
+        <meta name="author" content="Rapikom" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://rapikom-embajador.vercel.app/" />
+        <meta property="og:title" content="Rapikom Embajador - Aumenta tus ventas hasta 60% con financiamiento RCash" />
+        <meta property="og:description" content="Únete a más de 900 aliados comerciales que ya están transformando sus negocios con Rapikom. Ofrece financiamiento a tus clientes y crece sin límites." />
+        <meta property="og:image" content="https://rapikom-embajador.vercel.app/og-image.jpg" />
+
+        {/* Twitter */}
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://rapikom-embajador.vercel.app/" />
+        <meta property="twitter:title" content="Rapikom Embajador - Aumenta tus ventas hasta 60% con financiamiento RCash" />
+        <meta property="twitter:description" content="Únete a más de 900 aliados comerciales que ya están transformando sus negocios con Rapikom. Ofrece financiamiento a tus clientes y crece sin límites." />
+        <meta property="twitter:image" content="https://rapikom-embajador.vercel.app/og-image.jpg" />
+
+        {/* Favicon */}
+        <link rel="icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+        <link rel="manifest" href="/site.webmanifest" />
+
+        {/* Preconnect to external domains */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </Head>
 
-      <header className="bg-primary text-light py-6">
-        <div className="container mx-auto text-center">
-          <h1 className="text-4xl font-bold">Embajador Rapikom</h1>
-          <p className="text-lg mt-2">Aumenta tus ventas afiliándote a Rapikom.</p>
-        </div>
-      </header>
+            <main className="min-h-screen">
+        {/* Header */}
+        <Header />
 
-      <main className="container mx-auto py-10">
-        <section className="mb-10">
-          <h2 className="text-2xl font-bold mb-4">Beneficios para Clientes</h2>
-          <ul className="list-disc pl-5">
-            <li>Compras accesibles y flexibles.</li>
-            <li>Financiamiento en cuotas sin intereses.</li>
-            <li>Incremento en el límite de compra.</li>
-          </ul>
-        </section>
+        {/* Hero Section */}
+        <HeroSection />
 
-        <section className="mb-10">
-          <h2 className="text-2xl font-bold mb-4">Beneficios para Negocios</h2>
-          <ul className="list-disc pl-5">
-            <li>Aumento del ticket promedio.</li>
-            <li>Incremento en la tasa de conversión.</li>
-            <li>Flujo constante de nuevos clientes.</li>
-          </ul>
-        </section>
+        {/* Benefits Section */}
+        <BenefitsSection />
 
-        <section className="mb-10">
-          <h2 className="text-2xl font-bold mb-4">Cómo Funciona</h2>
-          <p>Afíliate a Rapikom y ofrece financiamiento en tu tienda. Recibe pagos en cuotas directamente en nuestra app.</p>
-        </section>
+        {/* Plans Section */}
+        <PlansSection />
 
-        <section>
-          <h2 className="text-2xl font-bold mb-4">Registro de Aliado</h2>
-          <SignupForm />
-        </section>
+        {/* Asesores Section */}
+        <AsesoresSection />
+
+        {/* FAQ Section */}
+        <FAQSection />
+
+        {/* Contact Section */}
+        <ContactSection />
       </main>
-
-      <footer className="bg-dark text-light py-6">
-        <div className="container mx-auto text-center">
-          <p>&copy; 2025 Rapikom. Todos los derechos reservados.</p>
-        </div>
-      </footer>
-    </div>
-  );
-};
-
-export default Home;
+    </>
+  )
+} 
