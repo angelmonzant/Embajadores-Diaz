@@ -13,7 +13,7 @@ const benefits = [
   },
   {
     icon: Users,
-    title: "Incremento del 25%",
+    title: "Incremento del 45%",
     subtitle: "en tasa de conversión",
     description: "Más clientes completan sus compras al tener opciones de financiamiento flexibles."
   },

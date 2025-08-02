@@ -25,9 +25,7 @@ export default function Header() {
   }
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-white/80 backdrop-blur-md shadow-lg' : 'bg-transparent'
-    }`}>
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md shadow-lg transition-all duration-300">
       <div className="container-custom">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
@@ -37,35 +35,37 @@ export default function Header() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-lg">R</span>
-            </div>
-            <span className="text-xl font-bold text-gray-800">Rapikom</span>
+            <img 
+              src="/assets/logo-rapikom.png" 
+              alt="Rapikom Logo" 
+              className="h-8 w-auto"
+            />
+            <span className="text-xl font-bold text-gray-900"></span>
           </motion.div>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
             <button 
               onClick={() => scrollToSection('benefits')}
-              className="text-gray-700 hover:text-primary transition-colors duration-200 font-medium"
+              className="text-gray-800 hover:text-primary transition-colors duration-200 font-medium"
             >
               Beneficios
             </button>
             <button 
               onClick={() => scrollToSection('plans')}
-              className="text-gray-700 hover:text-primary transition-colors duration-200 font-medium"
+              className="text-gray-800 hover:text-primary transition-colors duration-200 font-medium"
             >
               Planes
             </button>
             <button 
               onClick={() => scrollToSection('asesores')}
-              className="text-gray-700 hover:text-primary transition-colors duration-200 font-medium"
+              className="text-gray-800 hover:text-primary transition-colors duration-200 font-medium"
             >
               Nuestros Asesores
             </button>
             <button 
               onClick={() => scrollToSection('faq')}
-              className="text-gray-700 hover:text-primary transition-colors duration-200 font-medium"
+              className="text-gray-800 hover:text-primary transition-colors duration-200 font-medium"
             >
               FAQ
             </button>
@@ -80,7 +80,7 @@ export default function Header() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors duration-200"
+            className="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors duration-200 text-gray-800"
           >
             {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>

@@ -20,7 +20,7 @@ const faqs = [
   },
   {
     question: "¿Cómo funciona el programa de referidos?",
-    answer: "Por cada aliado comercial que invites a nuestra plataforma y pague su activación, recibirás un descuento directo en tu comisión por ventas."
+    answer: "Por cada 5 aliados que invites a nuestra plataforma y pague su activación, recibirás un descuento directo en tu comisión por ventas."
   },
   {
     question: "¿Cuánto cuesta la activación?",

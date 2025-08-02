@@ -9,12 +9,12 @@ export default function ContactSection() {
     const message = encodeURIComponent(
       '¡Hola! Estoy interesado en convertirme en aliado comercial de Rapikom. Me gustaría obtener más información sobre los beneficios y el proceso de afiliación.'
     )
-    const whatsappUrl = `https://wa.me/584141234567?text=${message}`
+    const whatsappUrl = `https://wa.me/584129854702?text=${message}`
     window.open(whatsappUrl, '_blank')
   }
 
   return (
-    <section id="contact" className="bg-gradient-to-br from-primary to-secondary py-20 text-white">
+    <section id="contact" className="bg-black py-20 text-white">
       <div className="container-custom">
         <AnimatedSection delay={0.2}>
           <div className="text-center mb-16">
@@ -108,7 +108,7 @@ export default function ContactSection() {
               <div className="mt-8 space-y-4">
                 <div className="flex items-center space-x-3 text-gray-300">
                   <Phone className="w-5 h-5" />
-                  <span>+58 414-123-4567</span>
+                  <span>+58 412-985-4702</span>
                 </div>
                 <div className="flex items-center space-x-3 text-gray-300">
                   <Mail className="w-5 h-5" />
@@ -116,7 +116,7 @@ export default function ContactSection() {
                 </div>
                 <div className="flex items-center space-x-3 text-gray-300">
                   <MapPin className="w-5 h-5" />
-                  <span>Caracas, Venezuela</span>
+                  <span>Maracaibo, Venezuela</span>
                 </div>
               </div>
 
@@ -147,7 +147,7 @@ export default function ContactSection() {
               </button>
             </motion.div>
             <p className="text-gray-300 mt-4">
-              Únete a la revolución del financiamiento en Venezuela
+              Únete a ofrecer financiamiento en Venezuela multiplicando tus ventas
             </p>
           </div>
         </AnimatedSection>

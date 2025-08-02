@@ -14,7 +14,16 @@ export default function AsesoresSection() {
     const message = encodeURIComponent(
       `¡Hola! Me gustaría obtener más información sobre Rapikom con ${asesor}.`
     )
-    const whatsappUrl = `https://wa.me/584141234567?text=${message}`
+    
+    let whatsappUrl
+    if (asesor === 'Kleiver Díaz') {
+      whatsappUrl = `https://wa.me/584129854702?text=${message}`
+    } else if (asesor === 'Angel Monzant') {
+      whatsappUrl = `https://wa.me/584127508045?text=${message}`
+    } else {
+      whatsappUrl = `https://wa.me/584129854702?text=${message}`
+    }
+    
     window.open(whatsappUrl, '_blank')
   }
 
@@ -45,7 +54,7 @@ export default function AsesoresSection() {
         {/* Video Introduction */}
         <AnimatedSection delay={0.4}>
           <div className="mb-16">
-            <div className="bg-gradient-to-r from-primary to-secondary rounded-3xl p-8 text-white text-center">
+            <div className="bg-black rounded-3xl p-8 text-white text-center">
               <motion.div 
                 className="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6"
                 whileHover={{ scale: 1.1 }}
@@ -58,16 +67,17 @@ export default function AsesoresSection() {
                 Conoce más sobre Rapikom y cómo puede transformar tu negocio a través de nuestros asesores especializados
               </p>
               
-              {/* Video Placeholder */}
+              {/* YouTube Video Embed */}
               <div className="relative max-w-4xl mx-auto">
-                <div className="aspect-video bg-black/20 rounded-2xl border border-white/20 flex items-center justify-center cursor-pointer hover:bg-black/30 transition-all duration-300">
-                  <div className="text-center">
-                    <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <Play className="w-8 h-8 text-white" />
-                    </div>
-                    <p className="text-lg font-medium">Video de Presentación</p>
-                    <p className="text-sm text-gray-300">Haz clic para reproducir</p>
-                  </div>
+                <div className="aspect-video rounded-2xl overflow-hidden">
+                  <iframe
+                    src="https://www.youtube.com/embed/EPd8POaR08U"
+                    title="Video de Introducción Rapikom"
+                    className="w-full h-full"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  ></iframe>
                 </div>
               </div>
             </div>
@@ -83,12 +93,16 @@ export default function AsesoresSection() {
               whileHover={{ y: -5 }}
             >
               <div className="text-center mb-8">
-                {/* Photo Placeholder */}
-                <div className="w-32 h-32 bg-gradient-to-br from-primary to-secondary rounded-full mx-auto mb-6 flex items-center justify-center">
-                  <Users className="w-16 h-16 text-white" />
+                {/* Kleiver Profile Photo */}
+                <div className="w-32 h-32 rounded-full mx-auto mb-6 overflow-hidden">
+                  <img 
+                    src="/assets/kleiver-profile.jpg" 
+                    alt="Kleiver Díaz" 
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-2">Kleiver Díaz</h3>
-                <p className="text-primary font-semibold mb-2">Asesor Comercial Senior</p>
+                <p className="text-primary font-semibold mb-2">Embajador Comercial</p>
                 <div className="flex justify-center space-x-1 mb-4">
                   {[...Array(5)].map((_, i) => (
                     <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
@@ -96,7 +110,7 @@ export default function AsesoresSection() {
                 </div>
                 <p className="text-gray-600 mb-6">
                   Especialista en estrategias de crecimiento comercial y optimización de ventas. 
-                  Más de 5 años de experiencia ayudando a negocios a maximizar sus beneficios con Rapikom.
+                  Más de 3 años de experiencia ayudando a negocios a maximizar sus beneficios con Rapikom.
                 </p>
               </div>
 
@@ -107,7 +121,7 @@ export default function AsesoresSection() {
                 </div>
                 <div className="flex items-center space-x-3">
                   <Award className="w-5 h-5 text-primary" />
-                  <span className="text-gray-700">Especialista en retail</span>
+                  <span className="text-gray-700">Especialista en PostVenta</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <Award className="w-5 h-5 text-primary" />
@@ -134,9 +148,13 @@ export default function AsesoresSection() {
               whileHover={{ y: -5 }}
             >
               <div className="text-center mb-8">
-                {/* Photo Placeholder */}
-                <div className="w-32 h-32 bg-gradient-to-br from-secondary to-primary rounded-full mx-auto mb-6 flex items-center justify-center">
-                  <Users className="w-16 h-16 text-white" />
+                {/* Angel Profile Photo */}
+                <div className="w-32 h-32 rounded-full mx-auto mb-6 overflow-hidden">
+                  <img 
+                    src="/assets/angel-profile.jpg" 
+                    alt="Angel Monzant" 
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-2">Angel Monzant</h3>
                 <p className="text-primary font-semibold mb-2">Asesor Estratégico</p>
@@ -154,15 +172,15 @@ export default function AsesoresSection() {
               <div className="space-y-4 mb-8">
                 <div className="flex items-center space-x-3">
                   <Award className="w-5 h-5 text-primary" />
-                  <span className="text-gray-700">+150 comercios exitosos</span>
+                  <span className="text-gray-700">Coordinador de Marketing</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <Award className="w-5 h-5 text-primary" />
-                  <span className="text-gray-700">Especialista en fintech</span>
+                  <span className="text-gray-700">Estrategias de Marketing</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <Award className="w-5 h-5 text-primary" />
-                  <span className="text-gray-700">Soporte 24/7</span>
+                  <span className="text-gray-700">Desarrollo de Negocios</span>
                 </div>
               </div>
 

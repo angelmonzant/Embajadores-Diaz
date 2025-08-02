@@ -19,7 +19,7 @@ export default function HeroSection() {
         <div 
           className="w-full h-full bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: "url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')"
+            backgroundImage: "url('/assets/portada-cover.jpg')"
           }}
         />
         <div className="absolute inset-0 bg-black/50" />
@@ -38,7 +38,7 @@ export default function HeroSection() {
               >
                 <span className="text-white">Vende en cuotas sin interés en tu</span>
                 <br />
-                <span className="text-yellow-400">establecimiento</span>
+                <span className="text-var(--primary-color)">establecimiento</span>
               </motion.h1>
             </AnimatedSection>
 
@@ -113,8 +113,8 @@ export default function HeroSection() {
                   <div className="flex justify-center mb-2">
                     <CreditCard className="w-6 h-6 text-yellow-400" />
                   </div>
-                  <div className="text-2xl font-bold text-white mb-1">$500</div>
-                  <div className="text-sm text-gray-300">Crédito inicial</div>
+                  <div className="text-2xl font-bold text-white mb-1">Líneas</div>
+                  <div className="text-sm text-gray-300">de Compras</div>
                 </motion.div>
               </div>
             </AnimatedSection>
@@ -128,15 +128,12 @@ export default function HeroSection() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              {/* Placeholder for person image */}
-              <div className="w-80 h-96 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20 flex items-center justify-center">
-                <div className="text-center text-white">
-                  <div className="w-24 h-24 bg-white/20 rounded-full mx-auto mb-4 flex items-center justify-center">
-                    <Users className="w-12 h-12" />
-                  </div>
-                  <p className="text-lg font-medium">Imagen del Asesor</p>
-                  <p className="text-sm text-gray-300">Aquí irá la foto del representante</p>
-                </div>
+              <div className="w-80 h-96 rounded-2xl overflow-hidden border border-white/20">
+                <img 
+                  src="/assets/foto-cover.jpg" 
+                  alt="Asesor Rapikom" 
+                  className="w-full h-full object-cover"
+                />
               </div>
             </motion.div>
           </div>
